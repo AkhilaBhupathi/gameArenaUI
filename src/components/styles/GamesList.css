@@ -1,0 +1,78 @@
+/* GamesList.css */
+
+/* Add these styles to your existing CSS or create a new CSS file */
+
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px; /* Add spacing between game cards */
+}
+
+.image-card,
+.description-card {
+  color: #fff;
+
+  flex: 0.5; /* Each card occupies half of the container */
+  margin: 100px;
+  padding: 10px;
+}
+
+.image-card img {
+  width: 60%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.game-image {
+  flex: 1; /* Image section occupies 1/2 of the card width */
+}
+
+.game-image img {
+  /* Make the image fill its container */
+  height: auto; /* Maintain aspect ratio */
+  border-top-left-radius: 10px; /* Rounded corners for top-left */
+  border-bottom-left-radius: 10px; /* Rounded corners for bottom-left */
+}
+
+.game-details {
+  flex: 1; /* Details section occupies 1/2 of the card width */
+  padding: 20px; /* Add padding for spacing */
+}
+
+.game-details h3 {
+  margin-bottom: 10px;
+}
+
+.game-details p {
+  margin-bottom: 0; /* Remove margin-bottom to avoid extra space */
+}
+
+/* Add these styles to your existing CSS or create a new CSS file */
+
+.description-card {
+  /* Text styles */
+  font-weight: bold; /* Make text bold */
+  /* Set font size */
+}
+
+.description-card h3 {
+  font-size: 50px;
+  margin-bottom: 10px; /* Add spacing below the name */
+}
+
+.description-card p {
+  font-size: 24px;
+  margin-bottom: 0; /* Remove default margin for paragraphs */
+}
+
+.description-card button {
+  /* Button styles */
+  background-color: #333; /* Dark background color */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Add padding inside the button */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  margin-top: 10px; /* Add spacing above the button */
+}

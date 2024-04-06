@@ -1,0 +1,40 @@
+.dashboard-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.website-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px; /* Add margin to separate from tabs */
+}
+
+.dashboard-tabs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dashboard-tab {
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: border-color 0.3s ease; /* Add transition for smooth border color change effect */
+  margin: 10px 50px; /* Add more margin between tabs */
+}
+
+.dashboard-tab:hover {
+  border-radius: 20px;
+  border-color: #fff; /* Change border color on hover */
+  border-width: 0.1px;
+}
+
+.dashboard-tab.selected {
+  background-color: #fff; /* White background for selected tab */
+  color: #333; /* Dark text color for selected tab */
+  border-radius: 20px; /* Rounded container */
+}
