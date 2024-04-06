@@ -22,7 +22,7 @@ const RequireAuth = ({ children }) => {
 
 function Layout() {
   const isLoggedIn = localStorage.getItem("userId") !== null;
-  const isOnboarded = localStorage.getItem("onboarded");
+  const isOnboarded = localStorage.getItem("isOnboarded");
 
   return (
     <>
