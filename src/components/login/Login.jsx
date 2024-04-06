@@ -85,7 +85,7 @@ export default function Login() {
         console.log("Result :", data);
         localStorage.setItem("userId", data.userId);
         localStorage.setItem("userName", data.username);
-        localStorage.setItem("isOnboarded", data.isOnboarded);
+        localStorage.setItem("isOnboarded", data.onboarded);
         window.location.href = "/";
       })
       .catch((error) => {
