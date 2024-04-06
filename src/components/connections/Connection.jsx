@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import "../styles/connections.css";
 
-export default function Connection({ id, name, interests }) {
+export default function Connection({ id, name, interests, isMatch }) {
+  const [isButtonInteracted, setIsButtonInteracted] = useState(false);
+
+  const handleButton = () => {
+    setIsButtonInteracted(true);
+  };
+
   return (
     <div className="profile">
       <div className="profile-content">
@@ -13,7 +20,15 @@ export default function Connection({ id, name, interests }) {
           <h2>{name}</h2>
           <p>Interests: {interests}</p>
         </div>
-        <button className="profile-button">Block</button>
+        {isButtonInteracted ? (
+          <button className="profile-button-disable">
+            {!isMatch ? "Blocked" : "Connected"}
+          </button>
+        ) : (
+          <button className="profile-button" onClick={handleButton}>
+            {!isMatch ? "Block" : "Connect"}
+          </button>
+        )}
       </div>
     </div>
   );

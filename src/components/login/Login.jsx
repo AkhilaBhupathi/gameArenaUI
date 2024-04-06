@@ -101,18 +101,6 @@ export default function Login() {
         {isRegister && (
           <>
             <label htmlFor="username" className="login-label">
-              Phone
-            </label>
-            <input
-              type="text"
-              id="username"
-              placeholder="Phone...."
-              autoComplete="off"
-              className="login-input"
-              value={phone}
-              onChange={handlePhoneChange}
-            />
-            <label htmlFor="username" className="login-label">
               Mail
             </label>
             <input
@@ -123,6 +111,18 @@ export default function Login() {
               className="login-input"
               value={mail}
               onChange={handleMailChange}
+            />
+            <label htmlFor="username" className="login-label">
+              Phone
+            </label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Phone...."
+              autoComplete="off"
+              className="login-input"
+              value={phone}
+              onChange={handlePhoneChange}
             />
           </>
         )}

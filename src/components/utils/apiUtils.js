@@ -25,7 +25,10 @@ export const fetchData = async (
       );
     }
 
-    const data = response.status !== 204 ? await response.json() : null;
+    const data =
+      response.status !== 204 && response.status !== 201
+        ? await response.json()
+        : null;
     return data;
   } catch (error) {
     console.error(error.message);

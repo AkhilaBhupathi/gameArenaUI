@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Game.css"; // Import CSS for styling
+import { fetchData } from "../utils/apiUtils";
 
 const MonkeyWhackBlitz = () => {
   const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState(60); // Timer set to 60 seconds initially
+  const [timer, setTimer] = useState(4); // Timer set to 60 seconds initially
   const [showSubmit, setShowSubmit] = useState(false);
   const [monkeyPosition, setMonkeyPosition] = useState({ x: -1, y: -1 }); // Initial position outside the grid
 
@@ -42,10 +43,27 @@ const MonkeyWhackBlitz = () => {
   const handleHitMonkey = (x, y) => {
     // If the user hits the monkey, increase the score by 10
     if (x === monkeyPosition.x && y === monkeyPosition.y) {
-      setScore(score + 10);
+      setScore(score + 1);
       // Move monkey to an invalid position so it doesn't pop up again until next interval
       setMonkeyPosition({ x: -1, y: -1 });
     }
+  };
+
+  const handleSubmit = () => {
+    const userId = localStorage.getItem("userId");
+    fetchData("http://localhost:8080/games/score", {}, "POST", {
+      userId: parseInt(userId),
+      gameId: 11,
+      score: score,
+      interestLevel: score,
+    })
+      .then((data) => {
+        console.log("Result :", data);
+        window.location.href = "/"; // Redirect to home page after submitting score
+      })
+      .catch((error) => {
+        console.log("Error checking", error);
+      });
   };
 
   return (
@@ -78,7 +96,11 @@ const MonkeyWhackBlitz = () => {
         ))}
       </div>
       <div className="score">Score: {score}</div>
-      {showSubmit && <button className="score-button">Submit</button>}
+      {showSubmit && (
+        <button className="score-button" onClick={handleSubmit}>
+          Submit
+        </button>
+      )}
     </div>
   );
 };

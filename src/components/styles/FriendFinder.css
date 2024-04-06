@@ -1,0 +1,62 @@
+.friend-finder {
+  padding: 20px;
+}
+
+.make-friends {
+  margin-bottom: 20px;
+}
+
+.make-friends-text {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 56px;
+  cursor: pointer;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-dropdown,
+.search-input,
+.search-button {
+  margin-right: 10px;
+  padding: 8px;
+  flex-grow: 0.8;
+}
+
+.search-button {
+  background-color: #777b78;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.results {
+  /* Add styles for the results container if needed */
+}
+
+.profile {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-content {
+  /* Add styles for the profile content if needed */
+}
+
+.filter-row label {
+  color: #fff;
+}
+
+.filter-row-col {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

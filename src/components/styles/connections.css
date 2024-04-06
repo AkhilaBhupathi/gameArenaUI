@@ -3,14 +3,14 @@
 }
 
 .leftSection {
-  width: 30vw;
+  width: 40vw;
   height: 100vh; /* Take full height of viewport */
   padding: 20px;
   box-sizing: border-box;
 }
 
 .rightSection {
-  width: 70vw;
+  width: 60vw;
   height: 100vh; /* Take full height of viewport */
   padding: 20px;
   box-sizing: border-box;
@@ -63,11 +63,23 @@
 }
 
 .profile-button {
-  background-color: #fff;
+  background-color: rgb(168, 169, 170);
   color: #333;
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
   cursor: pointer;
   margin-right: 0;
+  width: 10vw;
+}
+
+.profile-button-disable {
+  background-color: #777b78;
+  color: #fff;
+  border: none;
+  cursor: not-allowed;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-right: 0;
+  width: 10vw;
 }

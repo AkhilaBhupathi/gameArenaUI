@@ -12,7 +12,6 @@ export default function Layout(props) {
   useEffect(() => {
     fetchData(`http://localhost:8080/user/${userId}/profile`)
       .then((data) => {
-        console.log("I am here", data);
         setUserDetails(data);
       })
       .catch((error) => {
@@ -20,32 +19,6 @@ export default function Layout(props) {
       });
     setUserDetails(userDetails);
   }, []);
-
-  // userDetails = {
-  //   name: "Astha Singh",
-  //   age: 12,
-  //   city: "Bangalore",
-  //   gameInfoList: [
-  //     {
-  //       game: {
-  //         gameId: 0,
-  //         gameName: "Tic Tac Toe",
-  //         description: "",
-  //       },
-  //       score: 0,
-  //       interestLevel: 0,
-  //     },
-  //     {
-  //       game: {
-  //         gameId: 0,
-  //         gameName: "Wordle",
-  //         description: "",
-  //       },
-  //       score: 100,
-  //       interestLevel: 0,
-  //     },
-  //   ],
-  // };
 
   if (!userDetails) {
     return (
@@ -71,7 +44,7 @@ export default function Layout(props) {
           />
           <div>
             <p className="font-semibold text-xl text-white">
-              {userDetails?.name}
+              {userDetails?.username}
             </p>
             <div className="flex text-xs gap-1 items-center">
               <Location className="w-4 h-4" />
