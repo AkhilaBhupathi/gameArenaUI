@@ -19,12 +19,22 @@ export default function DashBoard() {
       return;
     }
     navigate(`/${tabName.toLowerCase()}`);
-    
+
   };
 
   return (
     <div className="dashboard-header">
-      <div className="website-name">GameArena</div>
+      <div className="website-name">
+      <img
+          src="images/gameArena.png"
+          alt="GamesArena Logo"
+          className="h-10 mr-2"
+        />
+        <h1 className="text-4xl font-bold text-teal-600 tracking-wide">
+          Game<span className="text-yellow-400">Arena</span>
+        </h1>
+
+      </div>
       <div className="dashboard-tabs">
         <button
           className={`dashboard-tab ${activeTab === "Home" ? "selected" : ""}`}
