@@ -57,10 +57,11 @@ export default function Login() {
       .then((data) => {
         localStorage.setItem("userId", data.userId);
         localStorage.setItem("userName", data.userName);
+        localStorage.setItem("isOnboarded", data.isOnboarded);
         window.location.href = "/";
       })
       .catch((err) => {
-        console.log("Error checking", error);
+                console.log("Error checking", error);
         setError("Something went wrong");
       });
   }
@@ -84,6 +85,7 @@ export default function Login() {
         console.log("Result :", data);
         localStorage.setItem("userId", data.userId);
         localStorage.setItem("userName", data.userName);
+        localStorage.setItem("isOnboarded", data.isOnboarded);
         window.location.href = "/";
       })
       .catch((error) => {

@@ -1,9 +1,10 @@
 import React from "react";
+import Form from "./userForm";
 
 export default function Layout() {
   return (
     <>
-      <h1>Onboarding</h1>
+      <Form />
     </>
   );
 }
