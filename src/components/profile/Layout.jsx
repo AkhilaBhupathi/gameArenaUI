@@ -1,35 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Skeleton from "./Skeleton";
 import { Location } from "./Location";
 import NoData from "./NoData";
+import { fetchData } from "../utils/apiUtils";
 
 export default function Layout(props) {
-  let { userDetails } = { ...props };
-  userDetails = {
-    name: "Astha Singh",
-    age: 12,
-    city: "Bangalore",
-    gameInfoList: [
-      {
-        game: {
-          gameId: 0,
-          gameName: "Tic Tac Toe",
-          description: "",
-        },
-        score: 0,
-        interestLevel: 0,
-      },
-      {
-        game: {
-          gameId: 0,
-          gameName: "Wordle",
-          description: "",
-        },
-        score: 100,
-        interestLevel: 0,
-      },
-    ],
-  };
+  const [userDetails, setUserDetails] = useState(null);
+
+  const userId = localStorage.getItem("userId");
+
+  useEffect(() => {
+    fetchData(`http://localhost:8080/user/${userId}/profile`)
+      .then((data) => {
+        console.log("I am here", data);
+        setUserDetails(data);
+      })
+      .catch((error) => {
+        console.log("Error", error);
+      });
+    setUserDetails(userDetails);
+  }, []);
+
+  // userDetails = {
+  //   name: "Astha Singh",
+  //   age: 12,
+  //   city: "Bangalore",
+  //   gameInfoList: [
+  //     {
+  //       game: {
+  //         gameId: 0,
+  //         gameName: "Tic Tac Toe",
+  //         description: "",
+  //       },
+  //       score: 0,
+  //       interestLevel: 0,
+  //     },
+  //     {
+  //       game: {
+  //         gameId: 0,
+  //         gameName: "Wordle",
+  //         description: "",
+  //       },
+  //       score: 100,
+  //       interestLevel: 0,
+  //     },
+  //   ],
+  // };
 
   if (!userDetails) {
     return (

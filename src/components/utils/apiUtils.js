@@ -1,4 +1,4 @@
-const fetchData = async (
+export const fetchData = async (
   url,
   params = {},
   method = "GET",

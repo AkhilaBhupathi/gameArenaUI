@@ -9,10 +9,22 @@ export default function Login() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isRegister, setIsRegister] = useState(false);
   const [error, setError] = useState("");
+  const [phone, setPhone] = useState("");
+  const [mail, setMail] = useState("");
 
   function handleUserNameChange({ target }) {
     if (error !== "") setError("");
     setUserName(target.value);
+  }
+
+  function handlePhoneChange({ target }) {
+    if (error !== "") setError("");
+    setPhone(target.value);
+  }
+
+  function handleMailChange({ target }) {
+    if (error !== "") setError("");
+    setMail(target.value);
   }
 
   function handlePasswordChange({ target }) {
@@ -39,7 +51,7 @@ export default function Login() {
       return;
     }
     fetchData(API.LOGIN, {}, "POST", {
-      userName: userName,
+      username: userName,
       password: password,
     })
       .then((data) => {
@@ -48,8 +60,6 @@ export default function Login() {
         window.location.href = "/";
       })
       .catch((err) => {
-        localStorage.setItem("userId", 7657);
-        window.location.href = "/";
         console.log("Error checking", error);
         setError("Something went wrong");
       });
@@ -65,8 +75,10 @@ export default function Login() {
       return;
     }
     fetchData(API.CREATE, {}, "POST", {
-      userName: userName,
+      username: userName,
       password: password,
+      phone: phone,
+      email: mail,
     })
       .then((data) => {
         console.log("Result :", data);
@@ -84,6 +96,34 @@ export default function Login() {
     <div className="login-container">
       <form className="login-form" onSubmit={(e) => e.preventDefault()}>
         <h2 className="login-header">{isRegister ? "Register" : "Login"}</h2>
+        {isRegister && (
+          <>
+            <label htmlFor="username" className="login-label">
+              Phone
+            </label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Phone...."
+              autoComplete="off"
+              className="login-input"
+              value={phone}
+              onChange={handlePhoneChange}
+            />
+            <label htmlFor="username" className="login-label">
+              Mail
+            </label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Mail...."
+              autoComplete="off"
+              className="login-input"
+              value={mail}
+              onChange={handleMailChange}
+            />
+          </>
+        )}
         <label htmlFor="username" className="login-label">
           User Name
         </label>

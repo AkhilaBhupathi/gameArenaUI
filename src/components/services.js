@@ -1,4 +1,4 @@
 export const API = {
-  CREATE: "http://localhost:8080/api/create",
-  LOGIN: "http://localhost:8080/api/create",
+  CREATE: "http://localhost:8080/user/signup",
+  LOGIN: "http://localhost:8080/user/signin",
 };
