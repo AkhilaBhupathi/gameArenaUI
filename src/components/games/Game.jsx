@@ -4,7 +4,7 @@ import { fetchData } from "../utils/apiUtils";
 
 const MonkeyWhackBlitz = () => {
   const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState(4); // Timer set to 60 seconds initially
+  const [timer, setTimer] = useState(60); // Timer set to 60 seconds initially
   const [showSubmit, setShowSubmit] = useState(false);
   const [monkeyPosition, setMonkeyPosition] = useState({ x: -1, y: -1 }); // Initial position outside the grid
 

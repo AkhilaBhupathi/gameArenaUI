@@ -3,14 +3,14 @@
 }
 
 .leftSection {
-  width: 40vw;
+  width: 30vw;
   height: 100vh; /* Take full height of viewport */
   padding: 20px;
   box-sizing: border-box;
 }
 
 .rightSection {
-  width: 60vw;
+  width: 70vw;
   height: 100vh; /* Take full height of viewport */
   padding: 20px;
   box-sizing: border-box;
@@ -51,6 +51,7 @@
 
 .profile h2 {
   margin-top: 0;
+  font-size: 24px;
 }
 
 .profile p {

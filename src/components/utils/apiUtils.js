@@ -16,7 +16,8 @@ export const fetchData = async (
       options.body = JSON.stringify(body);
     }
     const queryParams = new URLSearchParams(params).toString();
-    const response = await fetch(`${url}?${queryParams}`, options);
+    if (queryParams !== "") url = url.concat(`?${queryParams}`);
+    const response = await fetch(url, options);
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
@@ -25,10 +26,7 @@ export const fetchData = async (
       );
     }
 
-    const data =
-      response.status !== 204
-        ? await response.json()
-        : null;
+    const data = response.status !== 204 ? await response.json() : null;
     return data;
   } catch (error) {
     console.error(error.message);

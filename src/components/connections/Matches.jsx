@@ -62,7 +62,7 @@ const FriendFinder = () => {
           <Connection
             key={result.id}
             id={result.userId}
-            name={result.userName}
+            name={result.username}
             interests={result.matchedSkill}
             isMatch
           />
