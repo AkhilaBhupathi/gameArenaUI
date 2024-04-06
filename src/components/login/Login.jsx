@@ -11,7 +11,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const [phone, setPhone] = useState("");
   const [mail, setMail] = useState("");
-
+  
   function handleUserNameChange({ target }) {
     if (error !== "") setError("");
     setUserName(target.value);
@@ -61,7 +61,7 @@ export default function Login() {
         window.location.href = "/";
       })
       .catch((err) => {
-                console.log("Error checking", error);
+        console.log("Error checking", error);
         setError("Something went wrong");
       });
   }
@@ -85,8 +85,8 @@ export default function Login() {
         console.log("Result :", data);
         localStorage.setItem("userId", data.userId);
         localStorage.setItem("userName", data.userName);
-        localStorage.setItem("isOnboarded", data.isOnboarded);
-        window.location.href = "/";
+        localStorage.setItem("isOnboarded", data.onboarded);
+        window.location.href = "/onboarding";
       })
       .catch((error) => {
         console.log("Error checking", error);

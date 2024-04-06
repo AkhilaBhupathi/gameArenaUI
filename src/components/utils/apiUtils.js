@@ -26,7 +26,7 @@ export const fetchData = async (
     }
 
     const data =
-      response.status !== 204 && response.status !== 201
+      response.status !== 204
         ? await response.json()
         : null;
     return data;
