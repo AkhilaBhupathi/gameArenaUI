@@ -22,8 +22,8 @@ const RequireAuth = ({ children }) => {
 
 function Layout() {
   const isLoggedIn = localStorage.getItem("userId") !== null;
-  const isOnboarded = localStorage.getItem("isOnboarded");
-
+  const isOnboarded =
+    localStorage.getItem("isOnboarded") === "false" ? false : true;
   return (
     <>
       <div className="flex flex-col min-h-screen p-0">
